@@ -3,6 +3,7 @@ package chiarafais.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -17,7 +18,7 @@ public class Evento {
     @Column(name = "titolo")
     private String titolo;
     @Column(name = "data_evento")
-    private Date data_evento;
+    private LocalDate data_evento;
     @Column(name = "descrizione")
     private String descrizione;
     @Column(name = "tipo_evento")
@@ -30,7 +31,7 @@ public class Evento {
 
     }
 
-    public Evento(String titolo, Date data_evento,String descrizione, EventoType eventoType, int numero_max_partecipanti) {
+    public Evento(String titolo, LocalDate data_evento,String descrizione, EventoType eventoType, int numero_max_partecipanti) {
         this.titolo = titolo;
         this.data_evento = data_evento;
         this.descrizione = descrizione;
@@ -50,11 +51,11 @@ public class Evento {
         this.titolo = titolo;
     }
 
-    public Date getData_evento() {
+    public LocalDate getData_evento() {
         return data_evento;
     }
 
-    public void setData_evento(Date data_evento) {
+    public void setData_evento(LocalDate data_evento) {
         this.data_evento = data_evento;
     }
 
